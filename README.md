@@ -41,4 +41,9 @@ Key pads usually come in a matrix style.
 
 ## Step 4: Hooking up the old lcd screen (optional)
 
-## Step 5: Bringing it all together
+## Step 5: Tetecting that somebody got hte phone (abheben/SChalter)
+
+## Step 6: Skype in bash
+
+## Step 7: Bringing it all together
+
