@@ -17,7 +17,7 @@ def AttachmentStatusText(status):
    return skype.Convert.AttachmentStatusToText(status)
 
 def CallStatusText(status):
-    return skype.Convert.CallStatusToText(status)
+    return skysubltusToText(status)
 
 # This handler is fired when status of Call object has changed
 def OnCall(call, status):

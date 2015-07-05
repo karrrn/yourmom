@@ -45,5 +45,7 @@ Key pads usually come in a matrix style.
 
 ## Step 6: Skype in bash
 
+## Step 8: Store Audio stream somewhere?? Server from jobim?:)
+
 ## Step 7: Bringing it all together
 

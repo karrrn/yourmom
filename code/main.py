@@ -11,7 +11,7 @@ from pyo import *
 import time
 
 from skype import skype_callto
-
+from keypad import signals
 #---------------------
 # METHODS
 #---------------------
@@ -23,7 +23,7 @@ def play_transformed_signal(pitch_shift, spin):
 	inp = Input(chnl=0, mul=0.5)
 	indel = Delay(inp, delay=5)
 	if spin == 'up': pitch_shift += 100
-	elif: spin == 'down': pitch_shift -= 100
+	elif spin == 'down': pitch_shift -= 100
 	b = FreqShift(indel, shift=pitch_shift).out()
 	s.gui(locals())
 
@@ -54,9 +54,13 @@ def get_number():
 # SET UP
 #---------------------
 
-#TODO: Start jack in bash
+#Start jack in bash
 
-initial_instructions = 'path..'
+import subprocess
+subprocess.Popen("jackd -m -p 32 -d dummy")
+
+# data
+initial_instructions = '../data/intro.mp3'
 # serial port arduino
 ser = serial.Serial('/dev/tty.usbserial', 9600)
 
@@ -68,6 +72,7 @@ s = Server(duplex=1)
 # s.setInputDevice(0)
 s.boot()
 
+signal_handler = signals()
 
 #---------------------
 # MAIN LOOP
@@ -78,7 +83,8 @@ while  True:
 	
 	# wait for new user		
 	while True:
-		if 'pick_up' in ser.readline(): break
+		_, pick = signal_handler.get_signals()
+		if pick in not None: break
 
 	# delay cuz the user needs to take the receiver to its ear
 	time.sleep(1)

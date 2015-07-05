@@ -1,4 +1,4 @@
-## Step 1: Gathering information
+## Gathering information
 
 [reddit issue](http://www.reddit.com/r/Python/comments/2fo4og/help_with_a_realtime_pitch_shiftervoice_changer/)
 [sinple code](http://pastebin.com/2SeZZXHj)
